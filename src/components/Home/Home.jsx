@@ -10,35 +10,42 @@ const Home = () => {
 			y: '0%',
 			stagger: 0.1,
 			duration: 0.5,
-			// delay: 0.5,
 			ease: 'Power4.out',
 		})
-
 		tl.to('.slider', {
 			y: '-100%',
 			duration: 1,
 			delay: 0.5,
 			ease: 'power4.inOut',
 		})
-
 		tl.to('.intro', {
 			y: '-100%',
 			duration: 1,
 			ease: 'power2.out',
 		})
-
 		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 1 })
+
+		// Add a window resize event to adjust layout on orientation change
+		window.addEventListener('resize', () => {
+			tl.invalidate().restart() // Ensure animations reset on resize
+		})
+
+		return () => {
+			window.removeEventListener('resize', () => {
+				tl.invalidate().restart()
+			})
+		}
 	}, [])
 
 	return (
 		<div>
-			<div className='min-h-screen flex justify-center items-center'>
-				<div className='hero flex flex-col justify-center items-start'>
-					<h1 className='font-helveticaNeue font-bond text-7xl'>SwiftPeak</h1>
-					<p className='font-maison font-normal'>
-						This is Maison Neue (h2) SwiftPeak
-					</p>
-				</div>
+			<div className='hero flex flex-col justify-center items-start text-left px-4 sm:px-8'>
+				<h1 className='font-helveticaNeue font-bold text-5xl sm:text-7xl'>
+					SwiftPeak
+				</h1>
+				<p className='font-maison font-normal text-lg sm:text-2xl'>
+					This is Maison Neue SwiftPeak
+				</p>
 			</div>
 
 			<div className='intro bg-black fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center'>
