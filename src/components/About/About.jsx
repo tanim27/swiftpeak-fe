@@ -6,7 +6,11 @@ const About = () => {
 	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
-		tl.to('.text', { opacity: 1, duration: 0.5, delay: 0.5 })
+		tl.to('.text', {
+			opacity: 1,
+			duration: 0.5,
+			// delay: 0.5
+		})
 
 		tl.to('.slider', {
 			y: '-100%',

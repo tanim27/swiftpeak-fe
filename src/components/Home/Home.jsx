@@ -10,7 +10,7 @@ const Home = () => {
 			y: '0%',
 			stagger: 0.1,
 			duration: 0.5,
-			delay: 0.5,
+			// delay: 0.5,
 			ease: 'Power4.out',
 		})
 
