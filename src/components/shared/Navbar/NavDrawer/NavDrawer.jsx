@@ -29,13 +29,13 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 
 			<div
 				ref={drawerRef}
-				className='bg-black fixed top-0 right-0 w-[85%] h-full bg-white shadow-2xl transform z-20'
+				className='bg-black fixed top-0 right-0 w-[70%] h-full bg-white shadow-2xl transform z-20'
 				style={{ transform: 'translateX(100%)' }}
 			>
-				<div className='flex justify-between items-center px-4 py-3 border-b'>
-					<h2 className='text-black text-lg font-semibold'>Menu</h2>
+				<div className='flex justify-between items-center px-10 py-2 border-b-2'>
+					<h2 className='font-maison font-semibold text-black text-xl'>Menu</h2>
 					<button
-						className='text-gray-500 hover:text-gray-700'
+						className='text-lg text-gray-500 hover:text-gray-700'
 						onClick={toggleDrawer}
 					>
 						Close
@@ -43,7 +43,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 				</div>
 
 				<div className='font-helveticaNeue font-bold flex flex-col justify-center items-center h-full w-full'>
-					<div className='text-black flex justify-between items-center h-[95%] w-[90%]'>
+					<div className='bg-background text-black flex justify-between items-center h-[90%] w-[70%]'>
 						<div className='h-full flex flex-col justify-around items-start'>
 							<Link href='/'>
 								<h1
@@ -70,7 +70,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 								</h1>
 							</Link>
 						</div>
-						<div className='bg-[#fff] h-[80%] flex flex-col justify-around items-end'>
+						<div className='h-[70%] flex flex-col justify-around items-end'>
 							<Link href='/works'>
 								<h1
 									className='text-4xl sm:text-5xl cursor-pointer'

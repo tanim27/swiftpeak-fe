@@ -18,7 +18,7 @@ const TopNavbar = () => {
 	]
 
 	const handleResize = () => {
-		if (window.innerWidth <= 1080) {
+		if (window.innerWidth <= 720) {
 			setIsMobile(true)
 		} else {
 			setIsMobile(false)
@@ -51,16 +51,15 @@ const TopNavbar = () => {
 
 	return (
 		<>
+			<NavDrawer
+				isDrawerOpen={isDrawerOpen}
+				toggleDrawer={toggleDrawer}
+			/>
 			<div
-				className={`flex justify-between items-center w-full  ${
-					isMobile ? 'h-[10vh]' : 'h-[20vh]'
+				className={`bg-black flex justify-between  w-full  ${
+					isMobile ? 'h-[5vh] items-end' : 'h-[20vh] items-start'
 				} px-6 md:px-8 3xl:px-14`}
 			>
-				<NavDrawer
-					isDrawerOpen={isDrawerOpen}
-					toggleDrawer={toggleDrawer}
-				/>
-
 				<h2 className='font-helveticaNeue font-normal text-4xl 2xl:text-6xl'>
 					SwiftPeak
 				</h2>
@@ -68,7 +67,7 @@ const TopNavbar = () => {
 				{isMobile ? (
 					<>
 						<div
-							className='font-maison font-normal text-xl h-[20px] flex justify-between items-center gap-1 cursor-pointer relative top-2'
+							className='font-maison font-normal text-xl h-[20px] flex justify-between items-center gap-1 cursor-pointer relative top-1'
 							onClick={toggleDrawer}
 						>
 							<p>Menu</p>

@@ -31,6 +31,8 @@ body {
 	/* Fallback fonts in case custom fonts don't load immediately */
 	height: 100vh;
 	width: 100vw;
+	max-height: 100vh;
+	max-width: 100vw;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
