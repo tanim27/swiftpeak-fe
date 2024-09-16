@@ -29,9 +29,7 @@ body {
 	background-color: #ff5722;
 	font-family: 'Maison Neue', 'Helvetica Neue LT', Helvetica, sans-serif;
 	/* Fallback fonts in case custom fonts don't load immediately */
-	min-height: 80vh;
-	height: 80vh;
-	min-width: 100vw;
+	height: 100vh;
 	width: 100vw;
 	margin: 0;
 	padding: 0;
@@ -39,7 +37,8 @@ body {
 }
 
 main {
-	min-height: 80vh;
+	width: 100vw;
+	height: 80vh;
 }
 
 @media (prefers-color-scheme: dark) {
