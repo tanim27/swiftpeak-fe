@@ -56,9 +56,9 @@ const TopNavbar = () => {
 				toggleDrawer={toggleDrawer}
 			/>
 			<div
-				className={`w-full flex justify-between    ${
-					isMobile ? 'items-end h-[5vh]' : 'items-start h-[20vh]'
-				} px-6 md:px-8 3xl:px-14 pt-1 sm:pt-2`}
+				className={`px-6 md:px-8 3xl:px-14 w-full flex justify-between ${
+					isMobile ? 'items-end h-[5vh] pt-6' : 'items-start h-[20vh] pt-2'
+				} `}
 			>
 				<h2 className='font-helveticaNeue font-normal text-3xl sm:text-4xl 2xl:text-6xl'>
 					SwiftPeak
@@ -67,7 +67,7 @@ const TopNavbar = () => {
 				{isMobile ? (
 					<>
 						<div
-							className='font-maison font-normal text-xl h-[20px] flex justify-between items-center gap-1 cursor-pointer'
+							className='font-maison font-normal text-l h-[20px] flex justify-between items-center gap-1 cursor-pointer'
 							onClick={toggleDrawer}
 						>
 							<p>Menu</p>
