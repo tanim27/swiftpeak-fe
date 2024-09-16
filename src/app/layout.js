@@ -1,4 +1,4 @@
-import TopNavbar from '@/components/TopNavbar/TopNavbar'
+import Navbar from '@/components/shared/Navbar/Navbar'
 import '@/styles/globals.css'
 
 export const metadata = {
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body className={`antialiased`}>
-				<TopNavbar />
+				<Navbar />
 				{children}
 			</body>
 		</html>

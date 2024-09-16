@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
-const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
+const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 	const drawerRef = useRef(null)
 
 	useEffect(() => {
@@ -22,14 +22,14 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
 			{/* Backdrop  */}
 			{isDrawerOpen && (
 				<div
-					className='fixed inset-0 bg-black bg-opacity-50 z-10 transition-opacity duration-300'
+					className='fixed inset-0 bg-black bg-opacity-50 z-10 transition-opacity duration-600'
 					onClick={toggleDrawer}
 				></div>
 			)}
 
 			<div
 				ref={drawerRef}
-				className='bg-black fixed top-0 right-0 w-[80%] h-full bg-white shadow-2xl transform z-20'
+				className='bg-black fixed top-0 right-0 w-[85%] h-full bg-white shadow-2xl transform z-20'
 				style={{ transform: 'translateX(100%)' }}
 			>
 				<div className='flex justify-between items-center px-4 py-3 border-b'>
@@ -95,4 +95,4 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
 	)
 }
 
-export default Drawer
+export default NavDrawer

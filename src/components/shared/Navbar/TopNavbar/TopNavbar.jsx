@@ -2,7 +2,7 @@
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import Drawer from '../Drawer/Drawer'
+import NavDrawer from '../NavDrawer/NavDrawer'
 
 const TopNavbar = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -51,7 +51,7 @@ const TopNavbar = () => {
 
 	return (
 		<div className='min-h-[5vh] flex justify-between items-center w-full px-6 md:px-8 3xl:px-14 py-1'>
-			<Drawer
+			<NavDrawer
 				isDrawerOpen={isDrawerOpen}
 				toggleDrawer={toggleDrawer}
 			/>
