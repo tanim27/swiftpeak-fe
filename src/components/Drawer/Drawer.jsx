@@ -29,7 +29,7 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
 
 			<div
 				ref={drawerRef}
-				className='bg-black fixed top-0 right-0 w-[70%] h-full bg-white shadow-2xl transform z-20'
+				className='bg-black fixed top-0 right-0 w-[80%] h-full bg-white shadow-2xl transform z-20'
 				style={{ transform: 'translateX(100%)' }}
 			>
 				<div className='flex justify-between items-center px-4 py-3 border-b'>
