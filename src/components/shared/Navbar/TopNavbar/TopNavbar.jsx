@@ -67,7 +67,7 @@ const TopNavbar = () => {
 				{isMobile ? (
 					<>
 						<div
-							className='font-maison font-normal text-xl h-[20px] flex justify-between items-center gap-1 cursor-pointer relative top-1'
+							className='font-maison font-normal text-xl h-[20px] flex justify-between items-center gap-1 cursor-pointer'
 							onClick={toggleDrawer}
 						>
 							<p>Menu</p>

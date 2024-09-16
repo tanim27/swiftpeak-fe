@@ -32,7 +32,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 				className='bg-black fixed top-0 right-0 w-[70%] h-full bg-white shadow-2xl transform z-20'
 				style={{ transform: 'translateX(100%)' }}
 			>
-				<div className='flex justify-between items-center px-10 py-2 border-b-2'>
+				<div className='flex justify-between items-center px-8 py-2 border-b-2 relative top-2'>
 					<h2 className='font-maison font-semibold text-black text-xl'>Menu</h2>
 					<button
 						className='text-lg text-gray-500 hover:text-gray-700'
