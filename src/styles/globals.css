@@ -7,19 +7,6 @@
 	--foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
-
-body {
-	color: var(--foreground);
-	background: var(--background);
-	/* font-family: Maison Neue, sans-serif; */
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
 	display: none;
@@ -29,6 +16,34 @@ body {
 html {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+	min-height: 100%;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	background-color: #ff5722;
+	font-family: Maison Neue, sans-serif;
+	min-height: 100%;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+	min-height: 100vh; /* 100% of the viewport height */
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 @layer utilities {
@@ -42,6 +57,7 @@ html {
 	src: url('../fonts/Maison_Neue_Bold.ttf') format('truetype');
 	font-weight: 700; /* Bold */
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -49,6 +65,7 @@ html {
 	src: url('../fonts/Maison_Neue_Book.ttf') format('truetype');
 	font-weight: 400; /* Regular */
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -56,15 +73,12 @@ html {
 	src: url('../fonts/Maison_Neue_Light.ttf') format('truetype');
 	font-weight: 300; /* Light */
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Helvetica Neue LT';
 	src: url('../fonts/Helvetica_Neue_LT.ttf') format('truetype');
 	font-weight: normal;
-}
-
-body {
-	background-color: #ff5722;
-	font-family: Maison Neue, sans-serif;
+	font-display: swap;
 }
