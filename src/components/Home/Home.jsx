@@ -1,6 +1,7 @@
 'use client'
 import gsap from 'gsap'
 import { useEffect } from 'react'
+import Navbar from '../shared/Navbar/Navbar'
 
 const Home = () => {
 	useEffect(() => {
@@ -32,6 +33,7 @@ const Home = () => {
 
 	return (
 		<div>
+			<Navbar />
 			<div className='hero flex flex-col justify-center items-start text-left px-4 sm:px-8'>
 				<h1 className='font-helveticaNeue font-bold text-5xl sm:text-7xl'>
 					SwiftPeak
