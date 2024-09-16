@@ -50,7 +50,7 @@ const TopNavbar = () => {
 	}
 
 	return (
-		<div className='min-h-[5vh] flex justify-between items-center w-full px-6 md:px-8 3xl:px-14 py-1'>
+		<div className='flex justify-between items-center w-full h-[20vh] min-h-[20vh] px-6 md:px-8 3xl:px-14'>
 			<NavDrawer
 				isDrawerOpen={isDrawerOpen}
 				toggleDrawer={toggleDrawer}

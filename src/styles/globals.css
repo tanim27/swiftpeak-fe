@@ -29,15 +29,17 @@ body {
 	background-color: #ff5722;
 	font-family: 'Maison Neue', 'Helvetica Neue LT', Helvetica, sans-serif;
 	/* Fallback fonts in case custom fonts don't load immediately */
-	min-height: 100%;
-	min-width: 100%;
+	min-height: 80vh;
+	height: 80vh;
+	min-width: 100vw;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
 main {
-	min-height: 100vh;
+	min-height: 80vh;
 }
 
 @media (prefers-color-scheme: dark) {
