@@ -18,7 +18,7 @@ const TopNavbar = () => {
 	]
 
 	const handleResize = () => {
-		if (window.innerWidth <= 720) {
+		if (window.innerWidth <= 1080) {
 			setIsMobile(true)
 		} else {
 			setIsMobile(false)
@@ -51,7 +51,11 @@ const TopNavbar = () => {
 
 	return (
 		<>
-			<div className='bg-black flex justify-between items-center w-full h-[20vh] px-6 md:px-8 3xl:px-14'>
+			<div
+				className={`flex justify-between items-center w-full  ${
+					isMobile ? 'h-[10vh]' : 'h-[20vh]'
+				} px-6 md:px-8 3xl:px-14`}
+			>
 				<NavDrawer
 					isDrawerOpen={isDrawerOpen}
 					toggleDrawer={toggleDrawer}

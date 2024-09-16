@@ -47,7 +47,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 						<div className='h-full flex flex-col justify-around items-start'>
 							<Link href='/'>
 								<h1
-									className='text-5xl sm:text-6xl cursor-pointer'
+									className='text-4xl sm:text-5xl cursor-pointer'
 									onClick={toggleDrawer}
 								>
 									Home
@@ -55,7 +55,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 							</Link>
 							<Link href='/about'>
 								<h1
-									className='text-5xl sm:text-6xl cursor-pointer'
+									className='text-4xl sm:text-5xl cursor-pointer'
 									onClick={toggleDrawer}
 								>
 									About
@@ -63,7 +63,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 							</Link>
 							<Link href='/contact'>
 								<h1
-									className='text-5xl sm:text-6xl cursor-pointer'
+									className='text-4xl sm:text-5xl cursor-pointer'
 									onClick={toggleDrawer}
 								>
 									Contact
@@ -73,7 +73,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 						<div className='bg-[#fff] h-[80%] flex flex-col justify-around items-end'>
 							<Link href='/works'>
 								<h1
-									className='text-5xl sm:text-6xl cursor-pointer'
+									className='text-4xl sm:text-5xl cursor-pointer'
 									onClick={toggleDrawer}
 								>
 									Works
@@ -81,7 +81,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 							</Link>
 							<Link href='/team'>
 								<h1
-									className='text-5xl sm:text-6xl cursor-pointer'
+									className='text-4xl sm:text-5xl cursor-pointer'
 									onClick={toggleDrawer}
 								>
 									Team

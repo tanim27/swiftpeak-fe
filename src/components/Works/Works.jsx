@@ -9,7 +9,7 @@ const Works = () => {
 		tl.to('.text', {
 			opacity: 1,
 			duration: 0.5,
-			// delay: 0.5
+			delay: 0.5,
 		})
 
 		tl.to('.slider', {

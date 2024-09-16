@@ -31,7 +31,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className='w-full h-[80vh] flex justify-center items-center'>
+			<div className='w-full h-[90vh] flex justify-center items-center'>
 				<div className='bg-background hero flex flex-col justify-center items-start'>
 					<h1 className='font-helveticaNeue font-bold text-5xl sm:text-7xl'>
 						SwiftPeak
