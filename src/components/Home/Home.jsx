@@ -4,6 +4,25 @@ import { useEffect } from 'react'
 
 const Home = () => {
 	useEffect(() => {
+		// Fix for mobile viewport height
+		const setVh = () => {
+			let vh = window.innerHeight * 0.01
+			document.documentElement.style.setProperty('--vh', `${vh}px`)
+		}
+
+		// Set initial height
+		setVh()
+
+		// Update on window resize
+		window.addEventListener('resize', setVh)
+
+		// Clean up
+		return () => {
+			window.removeEventListener('resize', setVh)
+		}
+	}, [])
+
+	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
 		tl.to('.text1', {
@@ -42,8 +61,7 @@ const Home = () => {
 
 	return (
 		<>
-			{/* Use min-h-screen instead of h-[100vh] */}
-			<div className='w-full min-h-screen flex justify-center items-center text-white'>
+			<div className='hero-container w-full flex justify-center items-center text-white'>
 				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
 					<h3>Home Page</h3>
 				</div>

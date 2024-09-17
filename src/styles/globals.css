@@ -49,6 +49,11 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--vh: 100vh; /* Fallback */
+}
+
+.hero-container {
+	height: calc(var(--vh, 1vh) * 100); /* Use the custom height variable */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
