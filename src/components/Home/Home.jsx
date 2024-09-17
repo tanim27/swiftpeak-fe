@@ -1,8 +1,26 @@
 'use client'
 import gsap from 'gsap'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home = () => {
+	const [mobileHeight, setMobileHeight] = useState('100vh')
+
+	useEffect(() => {
+		const updateHeight = () => {
+			// Dynamically get the viewport height and set it for mobile devices
+			const vh = window.innerHeight * 0.01
+			setMobileHeight(`${vh * 100}px`)
+		}
+
+		// Run the function on initial load and when the window resizes
+		updateHeight()
+		window.addEventListener('resize', updateHeight)
+
+		return () => {
+			window.removeEventListener('resize', updateHeight)
+		}
+	}, [])
+
 	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
@@ -42,9 +60,12 @@ const Home = () => {
 
 	return (
 		<>
-			<div className='w-full h-[100vh] flex justify-center items-center text-white'>
+			<div
+				className='w-full flex justify-center items-center text-white'
+				style={{ height: mobileHeight }}
+			>
 				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
-					<h3 className=''>Home Page</h3>
+					<h3>Home Page</h3>
 				</div>
 			</div>
 
