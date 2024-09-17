@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import { useEffect } from 'react'
 
-const About = () => {
+const Home = () => {
 	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
@@ -44,7 +44,7 @@ const About = () => {
 		<>
 			<div className='w-full h-[100vh] flex justify-center items-center text-white'>
 				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
-					<h3 className=''>About Page</h3>
+					<h3 className=''>Home Page</h3>
 				</div>
 			</div>
 
@@ -67,4 +67,4 @@ const About = () => {
 	)
 }
 
-export default About
+export default Home
