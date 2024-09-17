@@ -8,18 +8,22 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-	return (
-		<html lang='en'>
-			<head>
-				<meta
-					name='viewport'
-					content='width=device-width, initial-scale=1.0'
-				/>
-			</head>
-			<body className={`antialiased`}>
-				<Navbar />
-				{children}
-			</body>
-		</html>
-	)
+	try {
+		return (
+			<html lang='en'>
+				<head>
+					<meta
+						name='viewport'
+						content='width=device-width, initial-scale=1.0'
+					/>
+				</head>
+				<body className={`antialiased`}>
+					<Navbar />
+					{children}
+				</body>
+			</html>
+		)
+	} catch (error) {
+		return <div>Error loading the page.</div>
+	}
 }

@@ -8,9 +8,18 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// background: '#FFB07C',
-				background: '#FF5722',
-				foreground: '#F9F2ED',
+				primary: '#1a3636',
+				secondary: '#9E9E9E',
+				tertiary: '#C1D3C8',
+				black: '#000000',
+				dark: '#212121',
+				white: '#FFFFFF',
+				light: '#F9F2ED',
+				success: '',
+				error: '',
+				warning: '',
+				info: '',
+				danger: '',
 			},
 			fontFamily: {
 				maison: ['Maison Neue', 'sans-serif'],

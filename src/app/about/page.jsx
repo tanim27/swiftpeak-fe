@@ -2,9 +2,9 @@ import About from '@/components/About/About'
 
 const page = () => {
 	return (
-		<div>
+		<>
 			<About />
-		</div>
+		</>
 	)
 }
 

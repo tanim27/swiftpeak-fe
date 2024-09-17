@@ -29,20 +29,22 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 
 			<div
 				ref={drawerRef}
-				className='w-[70%] h-full fixed top-0 right-0 bg-white shadow-2xl transform z-20'
+				className='bg-tertiary w-[70%] h-full fixed top-0 right-0 shadow-2xl transform z-20'
 				style={{ transform: 'translateX(100%)' }}
 			>
 				<div className='h-[40px] w-full flex justify-between items-center border-b-2 px-8 py-2 relative top-4 sm:top-0'>
-					<h2 className='font-maison font-semibold text-black text-xl'>Menu</h2>
+					<h2 className='font-maison font-semibold text-primary text-xl'>
+						Menu
+					</h2>
 					<button
-						className='font-maison font-light text-md text-gray-500 hover:text-gray-700'
+						className='font-maison font-light text-white hover:text-secondary text-md'
 						onClick={toggleDrawer}
 					>
 						Close
 					</button>
 				</div>
 
-				<div className='h-full w-full font-helveticaNeue font-bold text-black flex flex-col justify-center items-center'>
+				<div className='h-full w-full font-helveticaNeue font-bold text-primary flex flex-col justify-center items-center'>
 					<div className='h-full w-full flex justify-between items-center px-6 py-20'>
 						<div className='h-full flex flex-col justify-between items-start'>
 							<Link href='/'>

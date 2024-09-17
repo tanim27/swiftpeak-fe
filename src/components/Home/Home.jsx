@@ -1,66 +1,81 @@
 'use client'
 import gsap from 'gsap'
-import { useEffect } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 const Home = () => {
-	useEffect(() => {
+	const introRef = useRef(null)
+	const sliderRef = useRef(null)
+	const mainRef = useRef(null)
+
+	useLayoutEffect(() => {
+		const navbarHeight = mainRef.current.offsetHeight
+
 		const tl = gsap.timeline({ defaults: { ease: 'Power1.out' } })
 
 		tl.to('.text', {
 			y: '0%',
 			stagger: 0.15,
-			duration: 0.5,
-			ease: 'Power4.out',
+			duration: 0.3,
+			// ease: 'Power1.out',
 		})
 
-		tl.to('.slider', {
-			y: '-100%',
-			duration: 1,
-			delay: 1,
-			ease: 'power3.inOut',
+		tl.to(sliderRef.current, {
+			y: `-${100 + (navbarHeight / window.innerHeight) * 100}%`,
+			duration: 1.5,
+			delay: 0.5,
+			ease: 'power2.inOut',
 		})
 
-		tl.to('.intro', {
-			y: '-100%',
-			duration: 1,
-			ease: 'power2.out',
+		tl.to(introRef.current, {
+			y: `-${100 + (navbarHeight / window.innerHeight) * 100}%`,
+			duration: 2.5,
+			delay: 0.1,
+			ease: 'power1.out',
 		})
 
-		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 1 })
+		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 0.8 }, '=-1')
 	}, [])
 
 	return (
 		<>
-			<div className='w-full h-[90vh] flex justify-center items-center'>
-				<div className='bg-background hero flex flex-col justify-center items-start'>
-					<h1 className='font-helveticaNeue font-bold text-5xl sm:text-7xl'>
-						SwiftPeak
-					</h1>
-					<p className='font-maison font-normal'>
-						This is Maison Neue SwiftPeak
-					</p>
+			<main ref={mainRef}>
+				<div className='hero w-full h-[100vh] flex flex-col justify-center items-center '>
+					<div className='flex flex-col justify-center items-start'>
+						<h1 className='font-helveticaNeue font-bold text-5xl sm:text-7xl'>
+							SwiftPeak
+						</h1>
+						<p className='font-maison font-normal'>
+							This is Maison Neue SwiftPeak
+						</p>
+					</div>
 				</div>
-			</div>
+			</main>
 
-			<div className='intro bg-black fixed top-0 left-0 h-full w-full flex flex-col justify-center items-center'>
-				<div className='intro-text font-helveticaNeue font-bold text-color-[#fff] text-5xl sm:text-7xl'>
-					<h1 className='heading overflow-hidden'>
-						<span className='text translate-y-full inline-block pb-2'>
-							Your peak
+			<div
+				ref={introRef}
+				className='intro fixed top-0 left-0 w-full h-full bg-black flex justify-center items-center'
+			>
+				<div className='introText font-helveticaNeue font-bold text-white text-5xl sm:text-7xl'>
+					<h1 className='hide overflow-hidden bg-black'>
+						<span className='text inline-block translate-y-full'>
+							Your Peak
 						</span>
 					</h1>
-					<h1 className='heading overflow-hidden'>
-						<span className='text translate-y-full inline-block'>in</span>
+					<h1 className='hide overflow-hidden bg-black'>
+						<span className='text inline-block translate-y-full'>in</span>
 					</h1>
-					<h1 className='heading overflow-hidden'>
-						<span className='text translate-y-full inline-block pb-4'>
+					<h1 className='hide overflow-hidden bg-black'>
+						<span className='text inline-block translate-y-full'>
 							Digital Solutions
 						</span>
 					</h1>
 				</div>
 			</div>
 
-			<div className='slider bg-[#fff] fixed top-0 left-0 w-full h-full translate-y-full'></div>
+			<div
+				ref={sliderRef}
+				className='slider bg-white fixed top-0 left-0 w-full h-full bg-white translate-y-full'
+			></div>
 		</>
 	)
 }
