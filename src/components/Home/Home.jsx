@@ -1,9 +1,8 @@
 'use client'
 import gsap from 'gsap'
-import { useEffect } from 'react'
 
 const Home = () => {
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
 		tl.to('.text1', {
@@ -38,11 +37,13 @@ const Home = () => {
 		})
 
 		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 0.8 })
+
+		// Ensure refresh resets the animation positions
+		ScrollTrigger.refresh()
 	}, [])
 
 	return (
 		<>
-			{/* Use min-h-screen instead of h-[100vh] */}
 			<div className='w-full min-h-screen flex flex-col justify-center items-center text-white'>
 				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
 					<h3>Home Page</h3>
