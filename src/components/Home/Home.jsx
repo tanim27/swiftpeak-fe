@@ -3,30 +3,24 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLayoutEffect } from 'react'
 
-// Register ScrollTrigger with GSAP
-gsap.registerPlugin(ScrollTrigger)
-
 const Home = () => {
 	useLayoutEffect(() => {
-		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
+		gsap.registerPlugin(ScrollTrigger)
 
-		tl.to('.text1', {
-			opacity: 1,
-			duration: 0.5,
-			delay: 0.5,
+		const tl = gsap.timeline({
+			defaults: { ease: 'Power3.out' },
+			scrollTrigger: {
+				trigger: '.hero',
+				start: 'top top',
+				end: 'bottom top',
+				scrub: true, // smooth scrolling
+				onRefresh: () => ScrollTrigger.refresh(), // ensures animation recalculates on refresh
+			},
 		})
 
-		tl.to('.text2', {
-			opacity: 1,
-			duration: 0.5,
-			delay: 0.5,
-		})
-
-		tl.to('.text3', {
-			opacity: 1,
-			duration: 0.5,
-			delay: 0.5,
-		})
+		tl.to('.text1', { opacity: 1, duration: 0.5, delay: 0.5 })
+		tl.to('.text2', { opacity: 1, duration: 0.5, delay: 0.5 })
+		tl.to('.text3', { opacity: 1, duration: 0.5, delay: 0.5 })
 
 		tl.to('.slider', {
 			y: '-100%',
@@ -34,22 +28,10 @@ const Home = () => {
 			delay: 0.5,
 			ease: 'power4.inOut',
 		})
-
-		tl.to('.intro', {
-			y: '-100%',
-			duration: 1,
-			ease: 'power2.out',
-		})
-
+		tl.to('.intro', { y: '-100%', duration: 1, ease: 'power2.out' })
 		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 0.8 })
 
-		// Ensure ScrollTrigger is refreshed properly
-		ScrollTrigger.refresh()
-
-		return () => {
-			// Cleanup all ScrollTrigger instances when component unmounts
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-		}
+		ScrollTrigger.refresh() // ensure animation recalculates on page refresh
 	}, [])
 
 	return (
