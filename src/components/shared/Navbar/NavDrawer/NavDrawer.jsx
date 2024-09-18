@@ -22,7 +22,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 			{/* Backdrop  */}
 			{isDrawerOpen && (
 				<div
-					className='fixed inset-0 bg-black bg-opacity-50 z-10 transition-opacity duration-600'
+					className='fixed inset-0 bg-opacity-50 z-10 transition-opacity duration-600'
 					onClick={toggleDrawer}
 				></div>
 			)}

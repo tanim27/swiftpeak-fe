@@ -56,8 +56,8 @@ const TopNavbar = () => {
 				toggleDrawer={toggleDrawer}
 			/>
 			<div
-				className={`px-6 md:px-8 3xl:px-14 w-full flex justify-between ${
-					isMobile ? 'items-end h-[5vh] pt-6' : 'items-start h-[20vh] pt-2'
+				className={`bg-primary fixed top-0 left-0 w-full h-[20vh] z-10 px-6 md:px-8 3xl:px-14 flex justify-between ${
+					isMobile ? 'items-end h-[5vh] pt-6 pb-2' : 'items-start pt-2'
 				} `}
 			>
 				<h2 className='font-helveticaNeue font-normal text-3xl sm:text-4xl 2xl:text-6xl'>

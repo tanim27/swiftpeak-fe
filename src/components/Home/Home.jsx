@@ -4,25 +4,6 @@ import { useEffect } from 'react'
 
 const Home = () => {
 	useEffect(() => {
-		// Fix for mobile viewport height
-		const setVh = () => {
-			let vh = window.innerHeight * 0.01
-			document.documentElement.style.setProperty('--vh', `${vh}px`)
-		}
-
-		// Set initial height
-		setVh()
-
-		// Update on window resize
-		window.addEventListener('resize', setVh)
-
-		// Clean up
-		return () => {
-			window.removeEventListener('resize', setVh)
-		}
-	}, [])
-
-	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
 		tl.to('.text1', {
@@ -61,13 +42,14 @@ const Home = () => {
 
 	return (
 		<>
-			<div className='hero-container w-full flex justify-center items-center text-white'>
+			{/* Use min-h-screen instead of h-[100vh] */}
+			<div className='w-full min-h-screen flex flex-col justify-center items-center text-white'>
 				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
 					<h3>Home Page</h3>
 				</div>
 			</div>
 
-			<div className='intro bg-black fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center'>
+			<div className='intro bg-black fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center z-30'>
 				<div className='font-helveticaNeue font-bold text-5xl sm:text-7xl flex flex-col justify-center items-start'>
 					<h1 className='overflow-hidden'>
 						<span className='text1 opacity-0'>Your Peak</span>
@@ -81,7 +63,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			<div className='slider bg-white fixed top-0 left-0 w-full h-full transform translate-y-full'></div>
+			<div className='slider bg-white fixed top-0 left-0 w-full h-full transform translate-y-full z-40'></div>
 		</>
 	)
 }
