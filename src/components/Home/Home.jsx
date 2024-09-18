@@ -1,17 +1,28 @@
 'use client'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useLayoutEffect } from 'react'
-
-// Register ScrollTrigger with GSAP
+import gsap from 'gsap'
+import { useEffect } from 'react'
 
 const Home = () => {
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'Power3.out' } })
 
-		tl.to('.text1', { opacity: 1, duration: 0.5, delay: 0.5 })
-		tl.to('.text2', { opacity: 1, duration: 0.5, delay: 0.5 })
-		tl.to('.text3', { opacity: 1, duration: 0.5, delay: 0.5 })
+		tl.to('.text1', {
+			opacity: 1,
+			duration: 0.5,
+			delay: 0.5,
+		})
+
+		tl.to('.text2', {
+			opacity: 1,
+			duration: 0.5,
+			delay: 0.5,
+		})
+
+		tl.to('.text3', {
+			opacity: 1,
+			duration: 0.5,
+			delay: 0.5,
+		})
 
 		tl.to('.slider', {
 			y: '-100%',
@@ -26,15 +37,13 @@ const Home = () => {
 			ease: 'power2.out',
 		})
 
-		tl.to('.hero', { opacity: 1, duration: 0.8, delay: 1 })
-
-		ScrollTrigger.refresh()
+		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 0.8 })
 	}, [])
 
 	return (
 		<>
-			<div className='hero opacity-0 w-full h-[100vh] flex justify-center items-center text-white'>
-				<div className='font-maison font-normal text-3xl sm:text-5xl'>
+			<div className='w-full min-h-screen flex flex-col justify-center items-center text-white'>
+				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
 					<h3>Home Page</h3>
 				</div>
 			</div>
