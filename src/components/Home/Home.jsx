@@ -1,6 +1,10 @@
 'use client'
-import gsap from 'gsap'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLayoutEffect } from 'react'
+
+// Register ScrollTrigger with GSAP
+gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
 	useLayoutEffect(() => {
@@ -39,8 +43,13 @@ const Home = () => {
 
 		tl.fromTo('.hero', { opacity: 0 }, { opacity: 1, duration: 0.8 })
 
-		// Ensure refresh resets the animation positions
+		// Ensure ScrollTrigger is refreshed properly
 		ScrollTrigger.refresh()
+
+		return () => {
+			// Cleanup all ScrollTrigger instances when component unmounts
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+		}
 	}, [])
 
 	return (
