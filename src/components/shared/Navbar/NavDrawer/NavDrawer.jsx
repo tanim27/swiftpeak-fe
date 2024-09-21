@@ -34,8 +34,9 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 			<div
 				ref={drawerRef}
 				className='bg-tertiary h-full w-[70%] fixed top-0 right-0 shadow-2xl transform z-20'
+				style={{ transform: 'translateX(100%)' }}
 			>
-				<div className='h-[5%] md:h-[10%] w-full flex justify-between items-center border-b-2 pt-6 px-12 py-4'>
+				<div className='h-[5%] md:h-[10%] w-full flex justify-between items-center border-b-2 pt-8 px-12 py-4'>
 					<h2 className='font-semibold text-primary text-lg'>Menu</h2>
 					<button
 						className='font-light text-white hover:text-secondary text-sm'

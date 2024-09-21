@@ -48,6 +48,7 @@ const TopNavbar = () => {
 				isDrawerOpen={isDrawerOpen}
 				toggleDrawer={toggleDrawer}
 			/>
+
 			<div className='w-full h-[5vh] md:h-[20vh] flex justify-between items-end md:items-start px-6 md:px-10 pt-6 md:pt-2'>
 				<h2 className='font-helveticaNeue font-normal text-3xl md:text-4xl'>
 					SwiftPeak
