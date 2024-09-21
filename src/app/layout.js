@@ -1,3 +1,5 @@
+// src/app/layout.js
+
 import Navbar from '@/components/shared/Navbar/Navbar'
 import '@/styles/globals.css'
 
@@ -10,16 +12,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	try {
 		return (
-			<html lang='en'>
+			<html
+				lang='en'
+				className='h-full w-full'
+			>
 				<head>
 					<meta
 						name='viewport'
 						content='width=device-width, initial-scale=1.0'
 					/>
 				</head>
-				<body className={`antialiased`}>
+				<body className='antialiased h-full w-full'>
 					<Navbar />
-					{children}
+					<main className='pt-[5vh] md:pt-[20vh]'>{children}</main>
 				</body>
 			</html>
 		)

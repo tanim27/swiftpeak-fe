@@ -60,12 +60,6 @@
 html {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	height: 100vh;
-	width: 100vw;
-	overflow-x: hidden;
 }
 
 * {
@@ -77,9 +71,33 @@ html {
 body {
 	background-color: #1a3636;
 	color: #ffffff;
-	height: 100vh;
-	width: 100vw;
-	overflow-x: hidden;
 	font-family: Maison Neue, 'sans-serif';
 	text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+#root,
+#__next {
+	height: 100%;
+	width: 100%;
+}
+
+.antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
