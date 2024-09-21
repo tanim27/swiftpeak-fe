@@ -35,7 +35,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 				ref={drawerRef}
 				className='bg-tertiary h-full w-[70%] fixed top-0 right-0 shadow-2xl transform z-20'
 			>
-				<div className='h-[5%] md:h-[10%] w-full flex justify-between items-center border-b-2 px-16 py-4'>
+				<div className='h-[5%] md:h-[10%] w-full flex justify-between items-center border-b-2 pt-6 px-12 py-4'>
 					<h2 className='font-semibold text-primary text-lg'>Menu</h2>
 					<button
 						className='font-light text-white hover:text-secondary text-sm'
@@ -46,7 +46,7 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 				</div>
 
 				<div className='h-[95%] md:h-[90%] w-full font-helveticaNeue font-bold text-primary flex flex-col justify-center items-start px-8'>
-					<div className='h-[70%] flex flex-col justify-between items-start'>
+					<div className='h-[60%] flex flex-col justify-between items-start'>
 						<Link href='/'>
 							<h1
 								className='text-4xl md:text-5xl cursor-pointer'
