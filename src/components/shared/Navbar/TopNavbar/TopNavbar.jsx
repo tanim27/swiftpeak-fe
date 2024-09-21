@@ -10,13 +10,6 @@ const TopNavbar = () => {
 	const [activeLink, setActiveLink] = useState('')
 	const [hoveredLink, setHoveredLink] = useState('')
 
-	const RouteName = [
-		{ name: 'Works', href: '/works' },
-		{ name: 'About', href: '/about' },
-		{ name: 'Team', href: '/team' },
-		{ name: 'Contact', href: '/contact' },
-	]
-
 	const handleResize = () => {
 		if (window.innerWidth <= 720) {
 			setIsMobile(true)
@@ -51,59 +44,108 @@ const TopNavbar = () => {
 
 	return (
 		<>
-			<div
-				className={`bg-primary fixed top-0 left-0 w-full h-[20vh] z-10 px-6 md:px-8 3xl:px-14 flex justify-between ${
-					isMobile ? 'items-end h-[5vh] pt-6' : 'items-start pt-2'
-				} `}
-			>
-				<NavDrawer
-					isDrawerOpen={isDrawerOpen}
-					toggleDrawer={toggleDrawer}
-				/>
-
-				<h2 className='font-helveticaNeue font-normal text-3xl sm:text-4xl 2xl:text-6xl'>
+			<NavDrawer
+				isDrawerOpen={isDrawerOpen}
+				toggleDrawer={toggleDrawer}
+			/>
+			<div className='w-full h-[5vh] md:h-[20vh] flex justify-between items-end md:items-start px-8 pt-6 md:pt-2'>
+				<h2 className='font-helveticaNeue font-normal text-3xl md:text-4xl'>
 					SwiftPeak
 				</h2>
 
-				{isMobile ? (
-					<>
-						<div
-							className='font-maison font-normal text-lg h-[20px] flex justify-between items-center gap-1 cursor-pointer'
-							onClick={toggleDrawer}
+				<div
+					className='md:hidden font-maison font-normal text-lg h-[20px] flex justify-between items-center gap-1 cursor-pointer'
+					onClick={toggleDrawer}
+				>
+					<p>Menu</p>
+					<MoreHorizRoundedIcon />
+				</div>
+
+				<nav className='hidden font-maison font-normal md:flex flex-col gap-2 cursor-pointer'>
+					<Link href='/works'>
+						<p
+							className={`h-[20px] relative group pl-6 ${
+								activeLink === 'Works' && !hoveredLink ? 'text-active' : ''
+							}`}
+							onClick={() => handleLinkClick('Works')}
+							onMouseEnter={() => handleMouseEnter('Works')}
+							onMouseLeave={handleMouseLeave}
 						>
-							<p>Menu</p>
-							<MoreHorizRoundedIcon />
-						</div>
-					</>
-				) : (
-					<nav className='font-maison font-normal flex flex-col gap-2 cursor-pointer'>
-						{RouteName.map(({ name, href }) => (
-							<Link
-								href={href}
-								key={name}
-							>
-								<p
-									className={`h-[20px] relative group pl-6 ${
-										activeLink === name && !hoveredLink ? 'text-active' : ''
-									}`}
-									onClick={() => handleLinkClick(name)}
-									onMouseEnter={() => handleMouseEnter(name)}
-									onMouseLeave={handleMouseLeave}
-								>
-									{name}
-									<span
-										className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-[6px] w-[6px] bg-white rounded-full transition-opacity duration-200 ${
-											hoveredLink === name ||
-											(activeLink === name && !hoveredLink)
-												? 'opacity-100'
-												: 'opacity-0'
-										}`}
-									></span>
-								</p>
-							</Link>
-						))}
-					</nav>
-				)}
+							Works
+							<span
+								className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-[6px] w-[6px] bg-white rounded-full transition-opacity duration-200 ${
+									hoveredLink === 'Works' ||
+									(activeLink === 'Works' && !hoveredLink)
+										? 'opacity-100'
+										: 'opacity-0'
+								}`}
+							></span>
+						</p>
+					</Link>
+
+					<Link href='/about'>
+						<p
+							className={`h-[20px] relative group pl-6 ${
+								activeLink === 'About' && !hoveredLink ? 'text-active' : ''
+							}`}
+							onClick={() => handleLinkClick('About')}
+							onMouseEnter={() => handleMouseEnter('About')}
+							onMouseLeave={handleMouseLeave}
+						>
+							About
+							<span
+								className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-[6px] w-[6px] bg-white rounded-full transition-opacity duration-200 ${
+									hoveredLink === 'About' ||
+									(activeLink === 'About' && !hoveredLink)
+										? 'opacity-100'
+										: 'opacity-0'
+								}`}
+							></span>
+						</p>
+					</Link>
+
+					<Link href='/team'>
+						<p
+							className={`h-[20px] relative group pl-6 ${
+								activeLink === 'Team' && !hoveredLink ? 'text-active' : ''
+							}`}
+							onClick={() => handleLinkClick('Team')}
+							onMouseEnter={() => handleMouseEnter('Team')}
+							onMouseLeave={handleMouseLeave}
+						>
+							Team
+							<span
+								className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-[6px] w-[6px] bg-white rounded-full transition-opacity duration-200 ${
+									hoveredLink === 'Team' ||
+									(activeLink === 'Team' && !hoveredLink)
+										? 'opacity-100'
+										: 'opacity-0'
+								}`}
+							></span>
+						</p>
+					</Link>
+
+					<Link href='/contact'>
+						<p
+							className={`h-[20px] relative group pl-6 ${
+								activeLink === 'Contact' && !hoveredLink ? 'text-active' : ''
+							}`}
+							onClick={() => handleLinkClick('Contact')}
+							onMouseEnter={() => handleMouseEnter('Contact')}
+							onMouseLeave={handleMouseLeave}
+						>
+							Contact
+							<span
+								className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-[6px] w-[6px] bg-white rounded-full transition-opacity duration-200 ${
+									hoveredLink === 'Contact' ||
+									(activeLink === 'Contact' && !hoveredLink)
+										? 'opacity-100'
+										: 'opacity-0'
+								}`}
+							></span>
+						</p>
+					</Link>
+				</nav>
 			</div>
 		</>
 	)

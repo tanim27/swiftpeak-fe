@@ -42,14 +42,15 @@ const Home = () => {
 
 	return (
 		<>
-			<div className='w-full min-h-screen flex flex-col justify-center items-center text-white'>
-				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
+			<div className='w-full h-[95vh] md:h-[80vh] flex flex-col justify-center items-center text-white'>
+				<div className='hero text-3xl md:text-4xl flex flex-col justify-center items-center'>
 					<h3>Home Page</h3>
+					<h3>Maison Neue</h3>
 				</div>
 			</div>
 
 			<div className='intro bg-black fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center z-30'>
-				<div className='font-helveticaNeue font-bold text-5xl sm:text-7xl flex flex-col justify-center items-start'>
+				<div className='font-helveticaNeue font-bold text-5xl md:text-6xl flex flex-col justify-center items-start'>
 					<h1 className='overflow-hidden'>
 						<span className='text1 opacity-0'>Your Peak</span>
 					</h1>

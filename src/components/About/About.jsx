@@ -30,14 +30,14 @@ const About = () => {
 
 	return (
 		<>
-			<div className='w-full h-[100vh] flex justify-center items-center text-white'>
-				<div className='hero font-maison font-normal text-3xl sm:text-5xl'>
-					<h3 className=''>About Page</h3>
+			<div className='w-full h-[95vh] md:h-[80vh] flex flex-col justify-center items-center text-white'>
+				<div className='hero text-3xl md:text-4xl flex flex-col justify-center items-center'>
+					<h3>About Page</h3>
 				</div>
 			</div>
 
 			<div className='intro bg-black fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center z-30'>
-				<div className='font-helveticaNeue font-bold text-5xl sm:text-7xl flex flex-col justify-center items-start'>
+				<div className='font-helveticaNeue font-bold text-5xl md:text-6xl flex flex-col justify-center items-start'>
 					<h1 className='overflow-hidden'>
 						<span className='text opacity-0'>About</span>
 					</h1>

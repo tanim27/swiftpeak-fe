@@ -7,7 +7,11 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 
 	useEffect(() => {
 		if (isDrawerOpen) {
-			gsap.to(drawerRef.current, { x: 0, duration: 0.5, ease: 'power3.out' })
+			gsap.to(drawerRef.current, {
+				x: 0,
+				duration: 0.5,
+				ease: 'power3.out',
+			})
 		} else {
 			gsap.to(drawerRef.current, {
 				x: '100%',
@@ -29,67 +33,60 @@ const NavDrawer = ({ isDrawerOpen, toggleDrawer }) => {
 
 			<div
 				ref={drawerRef}
-				className='bg-tertiary w-[70%] h-full fixed top-0 right-0 shadow-2xl transform z-20'
-				style={{ transform: 'translateX(100%)' }}
+				className='bg-tertiary h-full w-[70%] fixed top-0 right-0 shadow-2xl transform z-20'
 			>
-				<div className='h-[40px] w-full flex justify-between items-center border-b-2 px-8 py-2 relative top-4 sm:top-0'>
-					<h2 className='font-maison font-semibold text-primary text-xl'>
-						Menu
-					</h2>
+				<div className='h-[5%] md:h-[10%] w-full flex justify-between items-center border-b-2 px-16 py-4'>
+					<h2 className='font-semibold text-primary text-lg'>Menu</h2>
 					<button
-						className='font-maison font-light text-white hover:text-secondary text-md'
+						className='font-light text-white hover:text-secondary text-sm'
 						onClick={toggleDrawer}
 					>
 						Close
 					</button>
 				</div>
 
-				<div className='h-full w-full font-helveticaNeue font-bold text-primary flex flex-col justify-center items-center'>
-					<div className='h-full w-full flex justify-between items-center px-6 py-20'>
-						<div className='h-full flex flex-col justify-between items-start'>
-							<Link href='/'>
-								<h1
-									className='text-4xl sm:text-5xl cursor-pointer'
-									onClick={toggleDrawer}
-								>
-									Home
-								</h1>
-							</Link>
-							<Link href='/about'>
-								<h1
-									className='text-4xl sm:text-5xl cursor-pointer'
-									onClick={toggleDrawer}
-								>
-									About
-								</h1>
-							</Link>
-							<Link href='/contact'>
-								<h1
-									className='text-4xl sm:text-5xl cursor-pointer'
-									onClick={toggleDrawer}
-								>
-									Contact
-								</h1>
-							</Link>
-						</div>
-						<div className='h-full flex flex-col justify-around items-end'>
-							<Link href='/works'>
-								<h1
-									className='text-4xl sm:text-5xl cursor-pointer'
-									onClick={toggleDrawer}
-								>
-									Works
-								</h1>
-							</Link>
-							<Link href='/team'>
-								<h1
-									className='text-4xl sm:text-5xl cursor-pointer'
-									onClick={toggleDrawer}
-								>
-									Team
-								</h1>
-							</Link>
-						</div>
+				<div className='h-[95%] md:h-[90%] w-full font-helveticaNeue font-bold text-primary flex flex-col justify-center items-start px-8'>
+					<div className='h-[70%] flex flex-col justify-between items-start'>
+						<Link href='/'>
+							<h1
+								className='text-4xl md:text-5xl cursor-pointer'
+								onClick={toggleDrawer}
+							>
+								Home
+							</h1>
+						</Link>
+						<Link href='/works'>
+							<h1
+								className='text-4xl md:text-5xl cursor-pointer'
+								onClick={toggleDrawer}
+							>
+								Works
+							</h1>
+						</Link>
+						<Link href='/about'>
+							<h1
+								className='text-4xl md:text-5xl cursor-pointer'
+								onClick={toggleDrawer}
+							>
+								About
+							</h1>
+						</Link>
+						<Link href='/team'>
+							<h1
+								className='text-4xl md:text-5xl cursor-pointer'
+								onClick={toggleDrawer}
+							>
+								Team
+							</h1>
+						</Link>
+						<Link href='/contact'>
+							<h1
+								className='text-4xl md:text-5xl cursor-pointer'
+								onClick={toggleDrawer}
+							>
+								Contact
+							</h1>
+						</Link>
 					</div>
 				</div>
 			</div>
