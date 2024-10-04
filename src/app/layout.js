@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
 						content='width=device-width, initial-scale=1.0'
 					/>
 				</head>
+
 				<body className='antialiased h-full w-full'>
 					<Navbar />
 					<main className='pt-[5vh] md:pt-[20vh]'>{children}</main>
