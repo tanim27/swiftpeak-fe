@@ -21,8 +21,8 @@ const TopNavbar = () => {
 		setHoveredLink('')
 	}
 	return (
-		<>
-			<div className='bg-secondary w-full hidden md:block sticky top-0 left-0 right-0 z-10'>
+		<header>
+			<div className='bg-primary h-full w-full hidden md:block fixed top-0 left-0 right-0 z-10'>
 				<div className='flex flex-row justify-between items-end px-10 py-2'>
 					<h1 className='font-helveticaNeue font-normal text-3xl md:text-4xl'>
 						SwiftPeak
@@ -135,7 +135,7 @@ const TopNavbar = () => {
 					</nav>
 				</div>
 			</div>
-		</>
+		</header>
 	)
 }
 

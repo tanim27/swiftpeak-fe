@@ -2,7 +2,7 @@ import Home from '@/components/Home/Home'
 
 export const metadata = {
 	title: 'SwiftPeak | Home',
-	description: 'SwifPeak Digital Solutions',
+	description: 'SwiftPeak Digital Solutions',
 }
 
 const page = () => {
